@@ -1,7 +1,10 @@
 {
+
     "Login": "登录",
     "Password": "密码",
     "Remember Me": "记住我",
     "First Name": "姓",
-    "Last Name": "名"
+    "Last Name": "名",
+    "Captcha": "验证码",
+    "Click on the picture to retrieve the authentication code": "点击图片重新获取验证码"
 }

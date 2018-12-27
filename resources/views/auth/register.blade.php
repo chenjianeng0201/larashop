@@ -17,7 +17,7 @@
                 <div class="col-md-2">
                   <input id="first_name" type="text"
                          class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name"
-                         value="{{ old('first_name') }}" required autofocus>
+                         value="{{ old('first_name') }}"  autofocus>
 
                   @if ($errors->has('first_name'))
                     <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                 <div class="col-md-2">
                   <input id="last_name" type="text"
                          class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name"
-                         value="{{ old('last_name') }}" required autofocus>
+                         value="{{ old('last_name') }}"  autofocus>
 
                   @if ($errors->has('last_name'))
                     <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
 
                 <div class="col-md-6">
                   <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                         name="email" value="{{ old('email') }}" required>
+                         name="email" value="{{ old('email') }}">
 
                   @if ($errors->has('email'))
                     <span class="invalid-feedback" role="alert">
@@ -68,6 +68,38 @@
                   @if ($errors->has('password'))
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                  @endif
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
+
+                <div class="col-md-6">
+                  <input id="captcha" class="form-control{{ $errors->has('captcha') ? 'is-invalid' : ''}}" name="captcha">
+
+                  <img class="thumbnail captcha mt-3 mb-2" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flag?'+Math.random()" title="{{ __('Click on the picture to retrieve the authentication code') }}">
+
+                  @if ($errors->has('captcha'))
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('captcha') }}</strong>
+                                    </span>
+                  @endif
+
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="test" class="col-md-4 col-form-label text-md-right">test</label>
+
+                <div class="col-md-6">
+                  <input id="test" type="text" class="form-control{{ $errors->has('test') ? ' is-invalid' : '' }}"
+                         name="test" value="{{ old('test') }}">
+
+                  @if ($errors->has('test'))
+                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('test') }}</strong>
                                     </span>
                   @endif
                 </div>
