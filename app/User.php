@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password',
     ];
 
     /**
@@ -27,4 +27,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function gravatar($size = '100')
+    {
+        $hash = md5(strtolower(trim('chenjianeng0201@gmail.com')));
+        return "http://www.gravatar.com/avatar/$hash?s=$size";
+    }
 }

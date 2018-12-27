@@ -1,5 +1,7 @@
 {
     "Login": "登录",
     "Password": "密码",
-    "Remember Me": "记住我"
+    "Remember Me": "记住我",
+    "First Name": "姓",
+    "Last Name": "名"
 }
