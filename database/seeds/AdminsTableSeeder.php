@@ -20,8 +20,7 @@ class AdminsTableSeeder extends Seeder
 //        ]);
        $admin = new Admin;
        $admin->username = 'admin';
-       $admin->password = md5('12345678');
-       $admin->is_super = true;
+       $admin->password = bcrypt('12345678');
        $admin->save();
     }
 }
