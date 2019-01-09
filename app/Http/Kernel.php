@@ -21,7 +21,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrustProxies::class,
 
         // cors跨域
-        // BarryvdhCorsHandleCors::class,
+        \Barryvdh\Cors\HandleCors::class,
     ];
 
     /**

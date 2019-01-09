@@ -15,7 +15,6 @@ class AdminsController extends Controller
 
     public function login(Request $request)
     {
-        header("Access-Control-Allow-Origin: *");
         $credentials = [
             'username' => $request->username, 
             'password' => $request->password
@@ -37,6 +36,7 @@ class AdminsController extends Controller
 
     public function logout()
     {
+
         auth('api')->logout();
 
         return response()->json(['code' => 200]);
