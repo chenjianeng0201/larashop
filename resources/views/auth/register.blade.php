@@ -10,38 +10,6 @@
           <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
               @csrf
-
-              <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
-
-                <div class="col-md-2">
-                  <input id="first_name" type="text"
-                         class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name"
-                         value="{{ old('first_name') }}"  autofocus>
-
-                  @if ($errors->has('first_name'))
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('first_name') }}</strong>
-                                    </span>
-                  @endif
-                </div>
-
-                <label for="name" class="col-md-1 col-form-label text-md-right">{{ __('Last Name') }}</label>
-
-                <div class="col-md-2">
-                  <input id="last_name" type="text"
-                         class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name"
-                         value="{{ old('last_name') }}"  autofocus>
-
-                  @if ($errors->has('last_name'))
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('last_name') }}</strong>
-                                    </span>
-                  @endif
-                </div>
-              </div>
-
-
               <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -77,9 +45,12 @@
                 <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
 
                 <div class="col-md-6">
-                  <input id="captcha" class="form-control{{ $errors->has('captcha') ? 'is-invalid' : ''}}" name="captcha">
+                  <input id="captcha" class="form-control{{ $errors->has('captcha') ? 'is-invalid' : ''}}"
+                         name="captcha">
 
-                  <img class="thumbnail captcha mt-3 mb-2" src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flag?'+Math.random()" title="{{ __('Click on the picture to retrieve the authentication code') }}">
+                  <img class="thumbnail captcha mt-3 mb-2" src="{{ captcha_src('flat') }}"
+                       onclick="this.src='/captcha/flag?'+Math.random()"
+                       title="{{ __('Click on the picture to retrieve the authentication code') }}">
 
                   @if ($errors->has('captcha'))
                     <span class="invalid-feedback" role="alert">
@@ -90,20 +61,20 @@
                 </div>
               </div>
 
-              <div class="form-group row">
-                <label for="test" class="col-md-4 col-form-label text-md-right">test</label>
+              {{--<div class="form-group row">--}}
+              {{--<label for="test" class="col-md-4 col-form-label text-md-right">test</label>--}}
 
-                <div class="col-md-6">
-                  <input id="test" type="text" class="form-control{{ $errors->has('test') ? ' is-invalid' : '' }}"
-                         name="test" value="{{ old('test') }}">
+              {{--<div class="col-md-6">--}}
+              {{--<input id="test" type="text" class="form-control{{ $errors->has('test') ? ' is-invalid' : '' }}"--}}
+              {{--name="test" value="{{ old('test') }}">--}}
 
-                  @if ($errors->has('test'))
-                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('test') }}</strong>
-                                    </span>
-                  @endif
-                </div>
-              </div>
+              {{--@if ($errors->has('test'))--}}
+              {{--<span class="invalid-feedback" role="alert">--}}
+              {{--<strong>{{ $errors->first('test') }}</strong>--}}
+              {{--</span>--}}
+              {{--@endif--}}
+              {{--</div>--}}
+              {{--</div>--}}
 
               <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">

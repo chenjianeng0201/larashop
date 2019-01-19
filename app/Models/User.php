@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -33,5 +33,10 @@ class User extends Authenticatable
     {
         $hash = md5(strtolower(trim('chenjianeng0201@gmail.com')));
         return "http://www.gravatar.com/avatar/$hash?s=$size";
+    }
+
+    public function getNameAttribute()
+    {
+        return $this->first_name . ' '. $this->last_name;
     }
 }

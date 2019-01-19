@@ -22,11 +22,9 @@ class AdminsController extends Controller
         
         if (!$token = auth('api')->attempt($credentials)){
             return response()->json(['code' => 401, 'error' => 'Unauthorized']);
-            // return response()->json(['error' => 'Unauthorized'], 401);
         }
+
         return $this->respondWithToken($token);
-        // return $this->response->array(['code' => 200, 'title' => '登录成功', 'msg' => '欢迎您，'. $request->username]);
-        
     }
 
     public function test()

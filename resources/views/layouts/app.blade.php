@@ -13,7 +13,17 @@
 
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
+  <link href="//at.alicdn.com/t/font_984481_vsqo4a6qrc.css" rel="stylesheet">
+  <script src="{{ asset('js/jquery3.1.min.js') }}" type="text/javascript"></script>
+  <style type="text/css">
+    .al-icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,6 +44,6 @@
 
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
+<script src="//at.alicdn.com/t/font_984481_vsqo4a6qrc.js"></script>
 </body>
-
 </html>
