@@ -18,9 +18,6 @@ class AdminsTableSeeder extends Seeder
 //           'username' => 'admin',
 //           'password' => bcrypt('12345678'),
 //        ]);
-       $admin = new Admin;
-       $admin->username = 'admin';
-       $admin->password = bcrypt('12345678');
-       $admin->save();
+
     }
 }
